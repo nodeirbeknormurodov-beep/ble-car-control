@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BLE Signalizatsiya</string>
+    <string name="status_disconnected">Ulanmagan</string>
+    <string name="status_connecting">Ulanmoqda...</string>
+    <string name="status_connected">Ulandi</string>
+    <string name="settings_title">Ulanish sozlamalari</string>
+    <string name="settings_hint">BLE qurilma nomi / kodi</string>
+    <string name="settings_save">Saqlash va ulanish</string>
+    <string name="door_closed">Eshik: Yopiq</string>
+    <string name="door_open">Eshik: OCHIQ</string>
+    <string name="lock_locked">Qulflangan</string>
+    <string name="lock_unlocked">Ochiq</string>
+    <string name="alarm_notification_title">OGOHLANTIRISH!</string>
+    <string name="alarm_notification_text">Mashinaga tegilgan deb aniqlandi!</string>
+</resources>

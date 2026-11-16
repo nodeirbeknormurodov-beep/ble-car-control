@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:padding="16dp">
+
+    <!-- ===== Tepa holat paneli ===== -->
+    <TextView
+        android:id="@+id/tvConnectionStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/status_disconnected"
+        android:textColor="@color/accent_red"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSettings"
+        android:layout_marginTop="24dp" />
+
+    <ImageButton
+        android:id="@+id/btnSettings"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_settings"
+        app:layout_constraintTop_toTopOf="@id/tvConnectionStatus"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLockStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lock_locked"
+        android:textColor="@color/text_white"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvConnectionStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="6dp" />
+
+    <TextView
+        android:id="@+id/tvDoorStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/door_closed"
+        android:textColor="@color/text_gray"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvLockStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="4dp" />
+
+    <!-- ===== Kalit pulti shakli (oval panel) ===== -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/fobCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/fob_bg"
+        app:cardCornerRadius="140dp"
+        app:cardElevation="8dp"
+        app:layout_constraintWidth_percent="0.78"
+        app:layout_constraintDimensionRatio="3:4"
+        app:layout_constraintTop_toBottomOf="@id/tvDoorStatus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="28dp">
+
+            <!-- Qator 1: Qulf (chap) / Ochish (o'ng) -->
+            <ImageButton
+                android:id="@+id/btnLock"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                android:padding="18dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_lock"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/btnEngine"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnUnlock"
+                app:layout_constraintWidth_percent="0.42"
+                app:layout_constraintHeight_percent="0.32" />
+
+            <ImageButton
+                android:id="@+id/btnUnlock"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                android:padding="18dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_unlock"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/btnTrunk"
+                app:layout_constraintStart_toEndOf="@id/btnLock"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.42"
+                app:layout_constraintHeight_percent="0.32" />
+
+            <!-- Qator 2: Yulduz (chap) / Mashina-bagaj (o'ng) -->
+            <ImageButton
+                android:id="@+id/btnEngine"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                android:padding="20dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_star"
+                app:layout_constraintTop_toBottomOf="@id/btnLock"
+                app:layout_constraintBottom_toTopOf="@id/btnFind"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnTrunk"
+                app:layout_constraintWidth_percent="0.42"
+                app:layout_constraintHeight_percent="0.32" />
+
+            <ImageButton
+                android:id="@+id/btnTrunk"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                android:padding="20dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_car"
+                app:layout_constraintTop_toBottomOf="@id/btnUnlock"
+                app:layout_constraintBottom_toTopOf="@id/btnFind"
+                app:layout_constraintStart_toEndOf="@id/btnEngine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.42"
+                app:layout_constraintHeight_percent="0.32" />
+
+            <!-- Qator 3: Joylashuv belgisi (markazda, pastda) -->
+            <ImageButton
+                android:id="@+id/btnFind"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                android:padding="16dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_pin"
+                app:layout_constraintTop_toBottomOf="@id/btnEngine"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.30"
+                app:layout_constraintHeight_percent="0.28" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
